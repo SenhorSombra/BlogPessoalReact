@@ -2,6 +2,7 @@ import React from 'react';
 import {Box, Button, Typography, Grid} from '@mui/material';
 import './Home.css';
 
+
 function Home() {
     return (
         <>
