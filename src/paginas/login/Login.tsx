@@ -1,16 +1,27 @@
-import react from 'react';
+import react, {useState} from 'react';
 import {Grid, Box, Typography, TextField, Button} from '@mui/material';
 import {Link} from 'react-router-dom';
 import './Login.css';
 
-function Login {
+function Login () {
+const [userLogin, setUserLogin] = useState<UserLogin>(
+    {
+        id:0,
+        nome: '' ,
+        usuario: '',
+        foto: '',
+        senha: '' ,
+        token: ''
+    }
+    );
+
 return(
 
     <Grid container direction='row' justifyContent='center' alignItems='center'>
         <Grid alignItems='center' xs={6} >
             <Box paddingX={20}>
                 <form>
-                   <Typography variant='h3' gutterBottom color='textPrimary'  component='h3' align='center' className='texto1'>Entrar</Typography> 
+                   <Typography variant='h3' gutterBottom color='textPrimary'  component='h3' align='center' className='textos1' >Entrar</Typography> 
                    <TextField id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
                    <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal'
                    type='password' fullWidth />
@@ -28,7 +39,10 @@ return(
                 <Box marginRight={1}>
                     <Typography variant='subtitle1' gutterBottom>Não tem uma conta?</Typography>
                 </Box>
-                    <Typography variant='subtitle1' gutterBottom align='center' className='texto1' >Cadastre-se</Typography>
+                <Link to='/cadastrousuario'>
+                    <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                </Link>
+                    
             </Box>
         </Grid>
         <Grid xs={6} className='imagem'>
@@ -39,3 +53,4 @@ return(
 
 }
 
+export default Login;

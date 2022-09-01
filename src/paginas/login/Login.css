@@ -1,5 +1,5 @@
 .textos1{
-  font-weight: bold;
+  font-weight: bold !important;
 }
 .imagem{
         background-image: url(http://i.imgur.com/d5bMdDJ.jpg);
