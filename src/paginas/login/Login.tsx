@@ -1,37 +1,69 @@
-import react, {useState} from 'react';
+import react, {useState,useEffect, ChangeEvent} from 'react';
 import {Grid, Box, Typography, TextField, Button} from '@mui/material';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import UserLogin from '../../models/UserLogin';
+import useLocalStorage from 'react-use-localstorage';
+import { login } from '../../services/Service';
 import './Login.css';
 
 function Login () {
+    let history = useNavigate();
+const [token, setToken] = useLocalStorage('token');
+
+
 const [userLogin, setUserLogin] = useState<UserLogin>(
     {
         id:0,
-        nome: '' ,
         usuario: '',
-        foto: '',
         senha: '' ,
         token: ''
     }
     );
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+        setUserLogin({
+
+            ...userLogin,
+            [e.target.name]: e.target.value
+            //propriedade | Valor
+        })
+
+    }
+    useEffect(()=>{
+        if(token != ''){
+            history('/posts')
+        }
+    }, [token])
+
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        try{
+            await login(`/usuarios/logar`, userLogin, setToken)
+
+            alert('usuario logado com sucesso!');
+        }catch(error) {
+            alert('Dados do Usuario inconsistente.Erro ao logar!')
+
+        }
+    }
 
 return(
 
     <Grid container direction='row' justifyContent='center' alignItems='center'>
         <Grid alignItems='center' xs={6} >
             <Box paddingX={20}>
-                <form>
+                <form onSubmit={onSubmit}>
                    <Typography variant='h3' gutterBottom color='textPrimary'  component='h3' align='center' className='textos1' >Entrar</Typography> 
-                   <TextField id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
-                   <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal'
+                   <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel}    id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
+                   <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel}  id='senha' label='senha' variant='outlined' name='senha' margin='normal'
                    type='password' fullWidth />
 
                    <Box marginTop={2} textAlign='center'>
-                    <Link to='/Home' className='text-decorator-none'>
                         <Button type='submit' variant='contained' color='primary'>
                             Logar
                         </Button>
-                    </Link>
+                    
                    </Box>
                 </form>
             </Box>
