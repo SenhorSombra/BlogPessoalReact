@@ -4,6 +4,7 @@ import User from '../../models/User';
 import { Grid, Box, Typography, TextField, Button } from '@mui/material';
 import { cadastroUsuario } from '../../services/Service';
 import './CadastroUsuario.css'
+import { link } from "fs";
 
 function CadastroUsuario() {
     let history = useNavigate();
@@ -40,7 +41,7 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (confirmarSenha === user.senha) {
+        if (confirmarSenha == user.senha) {
             cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
             alert('Usuario cadastrado com sucesso')
         } else {
@@ -61,7 +62,7 @@ function CadastroUsuario() {
                         <TextField value={confirmarSenha} onChange={(e:ChangeEvent<HTMLInputElement>)=> confirmarSenhaHandle(e)}  id='confirmarSenha' label='confirmaSenha' variant='outlined' name='confirmaSenha' margin='normal' fullWidth></TextField>
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/login' className='text-decorator-none'>
-                                <Button variant='contained' color='secondary' className='btnCancelar'>
+                                <Button variant='contained' color='secondary' className='btnCancelar' >
                                     Cancelar
                                 </Button>
                             </Link>
