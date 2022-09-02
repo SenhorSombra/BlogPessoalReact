@@ -6,7 +6,7 @@ import './TabPostagem.css';
 
 
 function TabPostagem() {
-    
+
     const [value, setValue] = useState('1')
     function handleChange(event: React.ChangeEvent<{}>, newValue: string) {
         setValue(newValue);
@@ -26,8 +26,8 @@ function TabPostagem() {
                     </Box>
                 </TabPanel>
                 <TabPanel value="2">
-                    <Typography variant="h5" gutterBottom color="textPrimary" component="h5" ></Typography>
-                    <Typography variant="body1" gutterBottom color="textPrimary" align="justify-content"></Typography>
+                    <Typography variant="h5" gutterBottom color="textPrimary" component="h5"  align='center' className='titulo'></Typography>
+                    <Typography variant="body1" gutterBottom color="textPrimary" align="justify"></Typography>
                 </TabPanel>
             </TabContext>
         </>
