@@ -1,4 +1,4 @@
-import react, {useState,useEffect, ChangeEvent} from 'react';
+import React, {useState,useEffect, ChangeEvent} from 'react';
 import {Grid, Box, Typography, TextField, Button} from '@mui/material';
 import {Link, useNavigate} from 'react-router-dom';
 import UserLogin from '../../models/UserLogin';
@@ -23,15 +23,15 @@ const [userLogin, setUserLogin] = useState<UserLogin>(
 
         setUserLogin({
 
-            ...userLogin,
+            ...userLogin, //Reticencias chamado Spread Operator usado para substituir a copia do userlogin
             [e.target.name]: e.target.value
             //propriedade | Valor
         })
 
     }
     useEffect(()=>{
-        if(token != ''){
-            history('/posts')
+        if(token !== ''){
+            history('/home')
         }
     }, [token])
 
@@ -55,8 +55,8 @@ return(
             <Box paddingX={20}>
                 <form onSubmit={onSubmit}>
                    <Typography variant='h3' gutterBottom color='textPrimary'  component='h3' align='center' className='textos1' >Entrar</Typography> 
-                   <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel}    id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
-                   <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel}  id='senha' label='senha' variant='outlined' name='senha' margin='normal'
+                   <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel(e)}    id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
+                   <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel(e)}  id='senha' label='senha' variant='outlined' name='senha' margin='normal'
                    type='password' fullWidth />
 
                    <Box marginTop={2} textAlign='center'>
