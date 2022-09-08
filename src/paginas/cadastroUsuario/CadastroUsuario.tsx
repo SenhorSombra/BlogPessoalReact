@@ -1,10 +1,9 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
+import { Grid, Box, Typography, TextField, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import User from '../../models/User';
-import { Grid, Box, Typography, TextField, Button } from '@mui/material';
 import { cadastroUsuario } from '../../services/Service';
-import './CadastroUsuario.css'
-import { link } from "fs";
+import './CadastroUsuario.css';
 
 function CadastroUsuario() {
     let history = useNavigate();
@@ -26,7 +25,7 @@ function CadastroUsuario() {
         })
     useEffect(() => {
         if (userResult.id !== 0) {
-            history('/home')
+            history('/login')
         }
     }, [userResult])
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
@@ -41,7 +40,7 @@ function CadastroUsuario() {
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (confirmarSenha == user.senha) {
+        if (confirmarSenha === user.senha) {
             cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
             alert('Usuario cadastrado com sucesso')
         } else {
