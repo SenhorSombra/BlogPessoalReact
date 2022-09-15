@@ -23,8 +23,8 @@ function App() {
       <ToastContainer />
     <Router>
       <Navbar />
-      <div style={{ minHeight: '100vh' }}>
-        <Routes> // Antigo Switch
+      <div style={{ minHeight: '90vh' }}>
+        <Routes> 
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />

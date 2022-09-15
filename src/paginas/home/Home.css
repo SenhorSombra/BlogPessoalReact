@@ -1,9 +1,13 @@
 .caixa {
-    background-color :#4E334E;
+    background-image: linear-gradient(#4E334E 50%, black ) ;
+    background-image: url(../../imagens/1156309.jpg);
+    height: auto;
+    width: auto;
+
    
 }
 
-.título {
+.titulo {
    color: white!important ;
    font-weight : bold !important ;
 }

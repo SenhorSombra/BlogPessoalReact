@@ -9,6 +9,6 @@
 }
 
 .coloracao {
-    background-color: #4E334E;
+    background-image: linear-gradient(#4E334E 50%, black ) ;
     height: 4rem;
 }
