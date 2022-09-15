@@ -4,7 +4,7 @@
 }
 
 .box2{
-    background-color: #303F9F;
+    background-color: #4E334E;
     height: 60px;
 }
 
@@ -15,4 +15,9 @@
 
 .textos{
    color: white;
+}
+
+.coloracao1 {
+    background-color: #4E334E;
+    
 }

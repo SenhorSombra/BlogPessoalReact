@@ -7,3 +7,8 @@
 .text-decorator-none {
     text-decoration: none;
 }
+
+.coloracao {
+    background-color: #4E334E;
+    height: 4rem;
+}

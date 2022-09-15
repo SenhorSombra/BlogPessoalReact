@@ -12,11 +12,11 @@ function TabPostagem() {
     }
   return (
     <>
-      <TabContext value={value}>
+      <TabContext value={value} >
         <AppBar position="static">
-          <Tabs centered indicatorColor="secondary" onChange={handleChange}>
+          <Tabs className="coloracao1" centered indicatorColor="secondary" onChange={handleChange}>
             <Tab label="Todas as postagens" value="1"/>
-            <Tab label="Sobre-nós" value="2" />
+            <Tab label="Sobre Mim" value="2" />
           </Tabs>
         </AppBar>
         <TabPanel value="1" >
@@ -25,8 +25,10 @@ function TabPostagem() {
           </Box>
         </TabPanel>
         <TabPanel value="2">
-          <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre-nós</Typography>
-          <Typography variant="body1" gutterBottom color="textPrimary" align="justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos ut eveniet natus totam et, voluptate dicta tempore alias, odio nobis non eius cupiditate minima inventore pariatur! Ipsum itaque consectetur voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit consequuntur suscipit fugiat, nam quis quod quaerat veritatis et, vel ratione beatae, facere neque! Quo animi porro voluptate saepe deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore adipisci, officia aut quidem dolorum deserunt iure dolorem doloribus velit nobis quas consequatur at ullam odit, nesciunt est nulla nihil excepturi!</Typography>
+          <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre mim</Typography>
+          <Typography variant="body1" gutterBottom color="textPrimary" align="justify" >Olá meu Nome é Vagner eu sou aqui de São Paulo e eu tenho 26 anos, 
+trabalhei como ajudante geral desde os 19 até o ano passado quando sai.
+Trabalhar na minha ultima empresa me agregou diversos tipos conhecimento: como eu trabalhava no setor de acabamento gerenciamento de tempo e trabalho em equipe eram necessários todos os dias. No meu tempo livre eu gosto de praticar esportes: como ciclismo, luta, também programar e jogar videogame. Me interessei pelo área de tecnologia quando estava no ensino médio e ingressei na faculdade após terminar, Estudei na Analise e Desenvolvimento de Sistemas na UNIP porem não completei a faculdade, pretendo terminar o curso e estou a procura da minha primeira oportunidade de trabalho em tecnologia, acredito que tenho potencial para aprender cada vez mais e desde já agradeço seu tempo em me conhecerem</Typography>
         </TabPanel>
       </TabContext>
     </>
