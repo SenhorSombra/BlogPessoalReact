@@ -74,13 +74,13 @@ function Login() {
 
     return (
 
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
+        <Grid container direction='row' justifyContent='center' alignItems='center' className="textos1" >
             <Grid alignItems='center' xs={6} >
                 <Box paddingX={20}>
                     <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1' >Entrar</Typography>
-                        <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
-                        <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
+                        <TextField  className="label" value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
+                        <TextField  className="label" value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
 
                         <Box marginTop={2} textAlign='center'>
                             <Button type='submit' variant='contained' color='primary'>

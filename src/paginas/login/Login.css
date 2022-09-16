@@ -1,5 +1,7 @@
 .textos1{
   font-weight: bold !important;
+  color: white !important;
+  text-decoration: none;
 }
 .imagem{
         background-image: url(http://i.imgur.com/d5bMdDJ.jpg);
@@ -12,4 +14,8 @@
 }
 .text-decorator-none {
     text-decoration: none;
+}
+
+.label{
+  background-color: #EAEBED;
 }

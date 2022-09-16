@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
-
+import './CadastroTema.css';
 
 
 function CadastroTema() {
@@ -111,9 +111,9 @@ function CadastroTema() {
   
     return (
         <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
+            <form onSubmit={onSubmit} className="lab3">
+                <Typography className="lab3" variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
+                <TextField className="label" value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" color="primary">
                     Finalizar
                 </Button>
